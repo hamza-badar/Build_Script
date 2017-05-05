@@ -34,6 +34,13 @@ git fetch https://github.com/halogenOS/android_packages_apps_Settings XOS-7.1-ol
 git cherry-pick 2d735d5a056f474afbb0e1e5d5ca353dc0777c4f
 cd ~/rom
 
+echo  "cherry-picking gesture icon"
+cd device/motorola/otus
+git fetch https://github.com/hamza-badar/device_motorola_otus pure
+git cherry-pick 594b342dbdd906c3a79c6cc717e31253d7bfee78
+git cherry-pick 5e826409fa0d0c1bf5bebc4ef0fc06167bd6e51f
+cd ~/rom
+
 echo "opening system.prop"
 nano device/motorola/msm8610-common/system.prop
 
@@ -47,5 +54,3 @@ lunch lineage_otus-userdebug
 mka bacon
 
 echo "build done"
-echo "changing directory to ROM zip location"
-cd out/target/product/otus
