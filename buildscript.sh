@@ -28,21 +28,12 @@ cd vendor/qcom/binaries
 git revert 63fbdf157d98c52a7ad33fde539c841feb566b92
 cd ~/rom
 
-echo "fixing developer option struck issue"
-cd packages/apps/Settings
-git fetch https://github.com/halogenOS/android_packages_apps_Settings XOS-7.1-old
-git cherry-pick 2d735d5a056f474afbb0e1e5d5ca353dc0777c4f
-cd ~/rom
-
 echo  "cherry-picking gesture icon"
 cd device/motorola/otus
 git fetch https://github.com/hamza-badar/device_motorola_otus pure
 git cherry-pick 594b342dbdd906c3a79c6cc717e31253d7bfee78
 git cherry-pick 5e826409fa0d0c1bf5bebc4ef0fc06167bd6e51f
 cd ~/rom
-
-echo "opening system.prop"
-nano device/motorola/msm8610-common/system.prop
 
 echo "changing host and user"
 export KBUILD_BUILD_USER=Hamza_Badar
