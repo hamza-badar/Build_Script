@@ -6,7 +6,7 @@ echo "clonning trees"
 https://github.com/hamza-badar/device_motorola_otus -b 7.1.1 device/motorola/otus
 
 echo "clonning common trees"
-https://github.com/AospExtended-Devices/device_motorola_msm8610-common.git -b 7.1.1 device/motorola/msm8610-common
+https://github.com/hamza-badar/device_motorola_msm8610-common-1.git -b 7.1.1 device/motorola/msm8610-common
 
 echo "clonning vendor"
 git clone https://github.com/TheMuppets/proprietary_vendor_motorola.git -b cm-14.1 vendor/motorola
