@@ -42,6 +42,6 @@ export KBUILD_BUILD_HOST=Azazel™
 echo "starting compilation"
 . build/envsetup.sh
 lunch aosp_otus-userdebug
-mka bacon
+mka aex
 
 echo "build done"
