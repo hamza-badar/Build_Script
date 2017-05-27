@@ -3,10 +3,10 @@ echo "Welcome to Build Script"
 cd ~/rom
 
 echo "clonning trees"
-https://github.com/LineageOS/android_device_motorola_otus.git -b cm-14.1 device/motorola/otus
+git clone https://github.com/LineageOS/android_device_motorola_otus.git -b cm-14.1 device/motorola/otus
 
 echo "clonning common trees"
-https://github.com/LineageOS/android_device_motorola_msm8610-common.git -b cm-14.1 device/motorola/msm8610-common
+git clone https://github.com/LineageOS/android_device_motorola_msm8610-common.git -b cm-14.1 device/motorola/msm8610-common
 
 echo "clonning vendor"
 git clone https://github.com/TheMuppets/proprietary_vendor_motorola.git -b cm-14.1 vendor/motorola
