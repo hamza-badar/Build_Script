@@ -2,6 +2,21 @@ echo "Welcome to Build Script"
 
 cd ~/rom
 
+echo "debloating vendor"
+cd vendor/cm
+git fetch https://github.com/hamza-badar/android_vendor_resurrection nougat
+git cherry-pick d45d8df06db05f56af45c0f20adf8a4abdbc1411
+git cherry-pick 2da5b4e9ef6962801520560fe5b9cf1881042bde
+git cherry-pick 22862b11eb2314c88bc59a63aea902263e14da8b
+git cherry-pick 508e601b22a2a314a72052808487e4fd1033bb99
+cd ~/rom
+
+echo "debloating build"
+cd build
+git fetch https://github.com/hamza-badar/android_build nougat
+git cherry-pick b11f960ba3feec732686f7e0b0367a7ea0cc591d
+cd ~/rom
+
 echo "clonning trees"
 git clone https://github.com/LineageOS/android_device_motorola_otus.git -b cm-14.1 device/motorola/otus
 
@@ -34,6 +49,9 @@ git fetch https://github.com/hamza-badar/device_motorola_otus pure
 git cherry-pick 594b342dbdd906c3a79c6cc717e31253d7bfee78
 git cherry-pick 5e826409fa0d0c1bf5bebc4ef0fc06167bd6e51f
 cd ~/rom
+
+echo "remove snap and fm"
+nano device/motorola/msm8610-common/msm8610.mk
 
 echo "changing host and user"
 export KBUILD_BUILD_USER=Hamza_Badar
