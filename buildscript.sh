@@ -6,7 +6,7 @@ echo "clonning trees"
 https://github.com/hamza-badar/device_motorola_otus -b 7.1.1 device/motorola/otus
 
 echo "clonning common trees"
-https://github.com/hamza-badar/device_motorola_msm8610-common-1.git -b 7.1.1 device/motorola/msm8610-common
+https://github.com/hamza-badar/android_device_motorola_msm8610-common.git -b aex device/motorola/msm8610-common
 
 echo "clonning vendor"
 git clone https://github.com/TheMuppets/proprietary_vendor_motorola.git -b cm-14.1 vendor/motorola
@@ -26,13 +26,6 @@ git clone https://github.com/LineageOS/android_device_qcom_common.git -b cm-14.1
 echo "removing binaries conflicts"
 cd vendor/qcom/binaries
 git revert 63fbdf157d98c52a7ad33fde539c841feb566b92
-cd ~/rom
-
-echo  "cherry-picking gesture icon"
-cd device/motorola/otus
-git fetch https://github.com/hamza-badar/device_motorola_otus pure
-git cherry-pick 594b342dbdd906c3a79c6cc717e31253d7bfee78
-git cherry-pick 5e826409fa0d0c1bf5bebc4ef0fc06167bd6e51f
 cd ~/rom
 
 echo "changing host and user"
